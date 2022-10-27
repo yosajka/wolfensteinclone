@@ -14,7 +14,7 @@ public class HandgunAmmoPickup : MonoBehaviour
         GlobalAmmo.numAmmo += 10;
 
         pickUpDisplay.SetActive(false);
-        pickUpDisplay.GetComponent<Text>().text = "HANDGUN";
+        pickUpDisplay.GetComponent<Text>().text = "CLIP OF BULLETS";
         pickUpDisplay.SetActive(true);
     }
 }
