@@ -1,13 +1,16 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HandgunFire : MonoBehaviour
 {
-    //public GameObject theGun;
     public GameObject muzzleFlash;
     public AudioSource fireFx;
     public AudioSource emptyAmmmoFx;
     private bool isFiring;
+
+    public float targetDistance;
+    public int damageAmount;
 
 
     void Update()
@@ -30,11 +33,22 @@ public class HandgunFire : MonoBehaviour
 
     IEnumerator HandgunFiring()
     {
+        RaycastHit enemyHit;
         isFiring = true;
         GlobalAmmo.numAmmo -= 1;
         fireFx.Play();
         muzzleFlash.SetActive(true);
         GetComponent<Animator>().Play("Handgunfire");
+
+        Ray ray = Camera.main.ScreenPointToRay(new Vector2(Screen.width/2, Screen.height/2));
+
+        if (Physics.Raycast(ray.origin, ray.direction, out enemyHit))
+        {
+            //Debug.DrawRay(ray.origin, ray.direction * 40, Color.yellow, 40f);
+            targetDistance = enemyHit.distance;
+            enemyHit.transform.SendMessage("DamageEnemy", damageAmount, SendMessageOptions.DontRequireReceiver);
+        }
+
         yield return new WaitForSeconds(0.05f);
         muzzleFlash.SetActive(false);
         yield return new WaitForSeconds(0.25f);
