@@ -8,7 +8,7 @@ public class DoorOpenFirst : MonoBehaviour
     void OnTriggerEnter()
     {
         doorFX.Play();
-        transform.parent.gameObject.GetComponent<Animator>().Play("L1Door01");
+        transform.parent.gameObject.GetComponent<Animator>().Play("DoorOpen");
         GetComponent<BoxCollider>().enabled = false;
         StartCoroutine(DoorClose());
     }
@@ -17,7 +17,7 @@ public class DoorOpenFirst : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         doorFX.Play();
-        transform.parent.gameObject.GetComponent<Animator>().Play("L1Door01Close");
+        transform.parent.gameObject.GetComponent<Animator>().Play("DoorClose");
         GetComponent<BoxCollider>().enabled = true;
     }
 }

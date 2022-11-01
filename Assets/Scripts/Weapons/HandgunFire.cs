@@ -10,7 +10,7 @@ public class HandgunFire : MonoBehaviour
     private bool isFiring;
 
     public float targetDistance;
-    public int damageAmount;
+    public int damageAmount = 10;
 
 
     void Update()

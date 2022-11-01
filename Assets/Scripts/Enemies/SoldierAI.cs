@@ -26,7 +26,7 @@ public class SoldierAI : MonoBehaviour {
         }
         if (hitTag != "Player")
         {
-            theSoldier.GetComponent<Animator>().Play("demo_combat_idle");
+            theSoldier.GetComponent<Animator>().Play("combat_idle");
             lookingAtPlayer = false;
         }
 
@@ -35,8 +35,8 @@ public class SoldierAI : MonoBehaviour {
     IEnumerator EnemyFire()
     {
         isFiring = true;
-        theSoldier.GetComponent<Animator>().Play("demo_combat_shoot", -1, 0);
-        theSoldier.GetComponent<Animator>().Play("demo_combat_shoot");
+        theSoldier.GetComponent<Animator>().Play("combat_shoot", -1, 0);
+        theSoldier.GetComponent<Animator>().Play("combat_shoot");
         fireFx.Play();
         muzzleFlash.SetActive(true);
         yield return new WaitForSeconds(0.05f);
