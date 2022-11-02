@@ -12,13 +12,6 @@ public class LevelCompleteStats : MonoBehaviour
     public GameObject enemyDisplay;
     public GameObject scoreDisplay;
     public GameObject timeDisplay;
-
-
-    void OnEnable()
-    {
-        
-    }
-
     
     void Update()
     {

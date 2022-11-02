@@ -14,7 +14,8 @@ public class LevelRecycle : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Level01");
+            Debug.Log(PlayerPrefs.GetString("SceneToLoad"));
+            SceneManager.LoadScene(PlayerPrefs.GetString("SceneToLoad"));
         }
     }
 

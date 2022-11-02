@@ -11,7 +11,7 @@ public class HandgunAmmoPickup : MonoBehaviour
     {
         pickupFX.Play();
         gameObject.SetActive(false);
-        GlobalAmmo.numAmmo += 10;
+        GlobalAmmo.numAmmo += 5;
 
         pickUpDisplay.SetActive(false);
         pickUpDisplay.GetComponent<Text>().text = "CLIP OF BULLETS";

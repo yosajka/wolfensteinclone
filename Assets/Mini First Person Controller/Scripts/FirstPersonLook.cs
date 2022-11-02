@@ -21,6 +21,7 @@ public class FirstPersonLook : MonoBehaviour
     {
         // Lock the mouse cursor to the game screen.
         Cursor.lockState = CursorLockMode.Locked;
+        //transform.Rotate(new Vector3 (0, 90, 0), Space.World);
     }
 
     void Update()
